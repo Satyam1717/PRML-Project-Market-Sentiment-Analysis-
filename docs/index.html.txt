@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Market Sentiment Analysis – Reliance Stocks</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f8fc;
+      color: #1e1e2f;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #0d47a1;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    h2 {
+      color: #0d47a1;
+    }
+    a {
+      color: #0d47a1;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #e3f2fd;
+      font-size: 0.9rem;
+    }
+    .button {
+      background-color: #0d47a1;
+      color: white;
+      padding: 0.6rem 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Market Sentiment Analysis</h1>
+  <p>Stock Price Prediction for Reliance Industries</p>
+  <a class="button" href="https://streamlit-app-228333235452.asia-south1.run.app/" target="_blank">🚀 Live Demo</a>
+</header>
+
+<section>
+  <h2>📌 Overview</h2>
+  <p>
+    This project analyzes market sentiment from tweets and financial headlines related to Reliance Industries. Using NLP and sentiment scoring, we forecast stock prices via time series models. A live web app is available for real-time predictions.
+  </p>
+
+  <h2>🛠 Tech Stack</h2>
+  <ul>
+    <li>Python, NumPy, Pandas, Scikit-learn, NLTK</li>
+    <li>Sentiment Analysis using VADER</li>
+    <li>SARIMAX from statsmodels for time series forecasting</li>
+    <li>Flask/Streamlit for deployment</li>
+  </ul>
+
+  <h2>📊 Methodology</h2>
+  <p>
+    - Scraped tweets and news headlines<br>
+    - Cleaned and tokenized text data<br>
+    - Assigned sentiment scores using VADER<br>
+    - Applied EWMA to smooth scores<br>
+    - Trained SARIMAX model with stock prices + sentiment<br>
+  </p>
+
+  <h2>📈 Results</h2>
+  <p>
+    Our model showed meaningful correlation between sentiment and stock movement. Forecasts closely matched real data during evaluation.
+  </p>
+
+  <h2>🔗 Links</h2>
+  <ul>
+    <li><a href="https://github.com/Satyam1717/PRML-Project-Market-Sentiment-Analysis-" target="_blank">GitHub Repository</a></li>
+    <li><a href="https://streamlit-app-228333235452.asia-south1.run.app/" target="_blank">Live Streamlit App</a></li>
+  </ul>
+</section>
+
+<footer>
+  Built by <strong>Satyam Jha</strong> and team<br>
+  PRML Project | B.Tech 2023 Batch
+</footer>
+
+</body>
+</html>
