@@ -1,77 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Market Sentiment Analysis – Reliance Stocks</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+  <meta charset="utf-8">
+  <title>Market Sentiment Analysis</title>
+  <meta name="description" content="Project page for 'Market Sentiment Analysis of Reliance Industries'">
+  <meta name="keywords" content="Reliance Industries, Sentiment Analysis, Market Analysis, Stock Forecasting">
+  <meta name="author" content="Satyam Jha">
+  
+  <!-- Social Meta -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="[PRML 2024] Market Sentiment Analysis of Reliance Industries">
+  <meta name="twitter:description" content="[PRML 2024] Market Sentiment Analysis of Reliance Industries">
+
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.cdnfonts.com/css/chalkduster" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f5f8fc;
-      color: #1e1e2f;
-      line-height: 1.6;
-    }
-    header {
-      background-color: #0d47a1;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem;
-    }
-    h2 {
-      color: #0d47a1;
-    }
-    a {
-      color: #0d47a1;
-      text-decoration: none;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #e3f2fd;
-      font-size: 0.9rem;
-    }
-    .button {
-      background-color: #0d47a1;
-      color: white;
-      padding: 0.6rem 1rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      text-decoration: none;
-    }
+    @import url('https://fonts.cdnfonts.com/css/chalkduster');
   </style>
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="/css/favicon.png">
+
+  <!-- Main CSS -->
+  <link href="style.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-
-<header>
-  <h1>Market Sentiment Analysis</h1>
+  <p class="title">Market Sentiment Analysis</p>
   <p>Stock Price Prediction for Reliance Industries</p>
-  <a class="button" href="https://streamlit-app-228333235452.asia-south1.run.app/" target="_blank">🚀 Live Demo</a>
-</header>
+  <p class="subtitle">CSL2050: Pattern Recognition and Machine Learning</p>
 
-<section>
-  <h2>📌 Overview</h2>
-  <p>
-    This project analyzes market sentiment from tweets and financial headlines related to Reliance Industries. Using NLP and sentiment scoring, we forecast stock prices via time series models. A live web app is available for real-time predictions.
+  <p class="author">
+    <span class="author"><a href="https://github.com/avnigupta21" target="_blank">Avni Gupta</a>&nbsp;<sup>1</sup></span>
+    <span class="author"><a href="https://github.com/nishchal1210" target="_blank">Nishchal Badaya</a>&nbsp;<sup>2</sup></span>
+    <span class="author"><a href="https://github.com/b23cm1019" target="_blank">Krish Jain</a>&nbsp;<sup>3</sup></span>
+    <span class="author"><a href="https://github.com/sagar7162" target="_blank">Sagar Ratna Chaudhary</a>&nbsp;<sup>4</sup></span>
+    <span class="author"><a href="https://github.com/Satyam1717" target="_blank">Satyam Jha</a>&nbsp;<sup>5</sup></span>
+    <span class="author"><a href="https://github.com/Shivam-252005" target="_blank">Shivam</a>&nbsp;<sup>6</sup></span>
   </p>
 
-  <h2>🛠 Tech Stack</h2>
+  <table border="0" align="center" class="affiliations" width="700px">
+    <tbody align="center">
+      <tr>
+        <td style="text-align: center;"><a href="https://www.iitj.ac.in/" target="_blank">Indian Institute of Technology Jodhpur</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="menu-container">
+    <a href="https://streamlit-app-228333235452.asia-south1.run.app/" target="_blank">Live Demo</a> |
+    <a href="https://github.com/Satyam1717/PRML-Project-Market-Sentiment-Analysis-/tree/master" target="_blank">GitHub Repo</a> |
+    <a href="https://github.com/Satyam1717/PRML-Project-Market-Sentiment-Analysis-/blob/master/Project%20Report.pdf" target="_blank">Report</a> |
+    <a href="https://youtu.be/yORB3cY9WDA" target="_blank">Short Talk</a>
+  </div>
+  <br>
+
+  <p class="section" id="sum"><b>Project Summary</b></p>
+
+  <p style="margin: 0 auto 20px auto; width: 84%; color: #444;">
+  This project analyzes market sentiment from tweets and financial headlines related to Reliance Industries. Using NLP and sentiment scoring, we forecast stock prices via time series models. A live web app is available for real-time predictions.
+  </p>
+  <p style="margin: 0 auto 20px auto; width: 84%; color: #444;">
+    The "Market Sentiment Analysis" project aims to predict stock price movements by integrating financial news sentiment with time series forecasting. Traditional technical analysis, though effective in capturing trends based on price and volume data, falls short in assessing the dynamic and often irrational impact of investor sentiment. Recognizing this gap, the project emphasizes the significance of market sentiment—shaped by continuous news updates—and its effect on Reliance Industries Limited (RIL), one of India’s largest conglomerates.
+  </p>
+  
+  <p style="margin: 0 auto 20px auto; width: 84%; color: #444;">
+    The project adopts a hybrid approach that blends explainable machine learning methods with robust statistical modeling. Initially, data was collected from the Economic Times, specifically filtering news articles relevant to RIL using Named Entity Recognition (NER) and keyword-based techniques. The textual data underwent rigorous preprocessing including tokenization, stopword removal, and lemmatization to ensure high-quality inputs for analysis.
+  </p>
+  
+  <p style="margin: 0 auto 20px auto; width: 84%; color: #444;">
+    For sentiment prediction, two approaches were implemented. In the first approach, a small subset of news articles was labeled using FinBERT, and topic modeling with LDA was used to extract topics. A traditional regression model like XGBoost was trained using these topic distributions to generalize sentiment prediction across the entire dataset. In the second approach, Word2Vec embeddings combined with TF-IDF weighted averaging were used to represent articles. The XGBoost model was trained on labeled financial news data to predict sentiment scores for RIL-specific articles. Feature engineering techniques such as PCA and Lasso Regression were explored but all features were retained for optimal performance.
+  </p>
+  
+  <p style="margin: 0 auto 20px auto; width: 84%; color: #444;">
+    The predicted sentiment scores were then aggregated on a daily basis and smoothed using an Exponentially Weighted Moving Average (EWMA) to create a sentiment time series. This time series was integrated as an exogenous variable into a SARIMAX model trained on RIL's historical stock price data from 2023 to 2025.
+  </p>
+  
+  <p style="margin: 0 auto 20px auto; width: 84%; color: #444;">
+    The SARIMAX model, enhanced with sentiment data, outperformed baseline models such as ARIMA and SARIMA. The model’s accuracy was validated using performance metrics like RMSE and MAPE. Visual comparisons also confirmed its ability to closely follow actual stock price trends.
+  </p>
+  
+  <p style="margin: 0 auto 20px auto; width: 84%; color: #444;">
+    For future forecasting beyond March 2025, a separate SARIMA model was trained to predict EWMA sentiment values. These predicted sentiment scores were then used in the SARIMAX model to forecast RIL stock prices, enabling a dynamic and sentiment-aware prediction pipeline.
+  </p>
+  
+  <p style="margin: 0 auto 20px auto; width: 84%; color: #444;">
+    In conclusion, the project effectively demonstrates the power of combining sentiment analysis with statistical forecasting. The successful application of this approach to RIL stock data highlights its potential for broader application across different sectors or companies. Future work could explore more advanced deep learning models such as LSTMs or Transformers to further enhance prediction accuracy.
+  </p>
+  
+  <br>
+  <h2> Tech Stack</h2>
   <ul>
-    <li>Python, NumPy, Pandas, Scikit-learn, NLTK</li>
-    <li>Sentiment Analysis using VADER</li>
-    <li>SARIMAX from statsmodels for time series forecasting</li>
-    <li>Flask/Streamlit for deployment</li>
+    - Python, NumPy, Pandas, Scikit-learn, NLTK<br>
+    - Sentiment Analysis using VADER<br>
+    -XGboost for sentiment-score<br>
+    - SARIMAX from statsmodels for time series forecasting<br>
+    - Streamlit for deployment<br>
   </ul>
 
-  <h2>📊 Methodology</h2>
+  <h2> Methodology</h2>
   <p>
     - Scraped tweets and news headlines<br>
     - Cleaned and tokenized text data<br>
@@ -79,23 +104,219 @@
     - Applied EWMA to smooth scores<br>
     - Trained SARIMAX model with stock prices + sentiment<br>
   </p>
+  <section id="results" style="max-width: 900px; margin: 60px auto; padding: 0 20px;">
+    <h2 style="text-align: center; color: #2c5364; font-size: 26px;">Model Evaluation: SARIMAX</h2>
+  
+    <p style="font-size: 16px; line-height: 1.6;">
+      <strong>Testing Accuracy:</strong> SARIMAX demonstrated better performance compared to ARIMA and SARIMA in terms of testing accuracy. 
+      Metrics such as Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and Mean Absolute Percentage Error (MAPE) confirmed its predictive accuracy.
+    </p>
+  
+    <div style="background-color: #f0f4f8; border-radius: 8px; padding: 20px; margin: 20px 0;">
+      <h4 style="margin: 0 0 10px 0;">SARIMAX Model Evaluation:</h4>
+      <ul style="list-style-type: none; padding-left: 0; font-size: 15px;">
+        <li><strong>MAE:</strong> 37.4163</li>
+        <li><strong>RMSE:</strong> 43.9098</li>
+        <li><strong>MAPE:</strong> 2.9738</li>
+      </ul>
+    </div>
+  
+    <div style="text-align: center;">
+      <img src="images/sarimax.png" alt="SARIMAX Prediction Plot" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px;">
+      <p style="font-size: 14px; color: #555; margin-top: 8px;">Figure: SARIMAX Model - Stock Price Prediction with EWMA Exogenous Variable</p>
+    </div>
+  </section>
+  
+  <p class="section"><b>Interactive Web-App</b></p>
+  <object type="text/html" data="https://streamlit-app-228333235452.asia-south1.run.app/?embed=true" style="width: 80%; height: 600px;"></object>
 
-  <h2>📈 Results</h2>
-  <p>
-    Our model showed meaningful correlation between sentiment and stock movement. Forecasts closely matched real data during evaluation.
-  </p>
+  <p class="section"><b>Project Video : </b></p>
+  <centre>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/yORB3cY9WDA?si=vr7rSls6RGGVpcTn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+  </centre>
 
-  <h2>🔗 Links</h2>
-  <ul>
-    <li><a href="https://github.com/Satyam1717/PRML-Project-Market-Sentiment-Analysis-" target="_blank">GitHub Repository</a></li>
-    <li><a href="https://streamlit-app-228333235452.asia-south1.run.app/" target="_blank">Live Streamlit App</a></li>
-  </ul>
-</section>
+  <div class="responsive-container-block container">
+    <p class="section">
+      <b>Our Team</b>
+    </p>
+    <div class="responsive-container-block">
+      <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+        <div class="card">
+          <div class="team-image-wrapper">
+            <img class="team-member-image" src="https://media.licdn.com/dms/image/v2/D5603AQG34Vw-Lo9uyQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1705557602595?e=1750291200&v=beta&t=hae2803_stVUsySKnR7K8KAbmdT6vpORlyaG6zrYkyk">
+          </div>
+          <p class="text-blk name">
+            Avni Gupta
+          </p>
+          <p class="text-blk position">
+            B23EE1007
+          </p>
 
-<footer>
-  Built by <strong>Satyam Jha</strong> and team<br>
-  PRML Project | B.Tech 2023 Batch
-</footer>
+          <div class="social-icons">
+            <a href="https://github.com/avnigupta21" target="_blank">
+              <img class="github-icon" src="https://img.icons8.com/?size=30&amp;id=62856&amp;format=png">
+            </a>
+            <a href="https://www.linkedin.com/in/avni-gupta-kr321/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+              <img class="linkedin-icon" src="https://img.icons8.com/?size=30&amp;id=98960&amp;format=png">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+        <div class="card">
+          <div class="team-image-wrapper">
+            <img class="team-member-image" src="images/1photo.jpg">
+          </div>
+          <p class="text-blk name">
+            Nishchal Badaya
+          </p>
+          <p class="text-blk position">
+            B23CM1053
+          </p>
 
+          <div class="social-icons">
+            <a href="https://github.com/nishchal1210" target="_blank">
+              <img class="github-icon" src="https://img.icons8.com/?size=30&amp;id=62856&amp;format=png">
+            </a>
+            <a href="https://www.linkedin.com/in/nishchal-badaya-2899a328a/" target="_blank">
+              <img class="linkedin-icon" src="https://img.icons8.com/?size=30&amp;id=98960&amp;format=png">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+        <div class="card">
+          <div class="team-image-wrapper">
+            <img class="team-member-image" src="https://drive.google.com/thumbnail?id=1qxjtE0MPCmuxiMiaAbHZi40NP2WhFRvZ&sz=w1000.jpg">
+          </div>
+          <p class="text-blk name">
+            Krish Jain
+          </p>
+          <p class="text-blk position">
+            B23CM1019
+          </p>
+
+          <div class="social-icons">
+            <a href="https://github.com/b23cm1019" target="_blank">
+              <img class="github-icon" src="https://img.icons8.com/?size=30&amp;id=62856&amp;format=png">
+            </a>
+            <a href="https://www.linkedin.com/in/krish-jain-93255828b/" target="_blank">
+              <img class="linkedin-icon" src="https://img.icons8.com/?size=30&amp;id=98960&amp;format=png">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+        <div class="card">
+          <div class="team-image-wrapper">
+            <img class="team-member-image" src="https://media.licdn.com/dms/image/v2/D5603AQGJ5Fh1GTb9gg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1723691929832?e=1750291200&v=beta&t=raT6-tEaz3JPW8hPLmUr9RS7cgRyhWq0sBcjmcs0h2g">
+          </div>
+          <p class="text-blk name">
+            Sagar Ratna Chaudhary
+          </p>
+          <p class="text-blk position">
+            B23CM1034
+          </p>
+
+          <div class="social-icons">
+            <a href="https://github.com/sagar7162" target="_blank">
+              <img class="github-icon" src="https://img.icons8.com/?size=30&amp;id=62856&amp;format=png">
+            </a>
+            <a href="https://www.linkedin.com/in/sagar-ratna-chaudhary-454740289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+              <img class="linkedin-icon" src="https://img.icons8.com/?size=30&amp;id=98960&amp;format=png">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+        <div class="card">
+          <div class="team-image-wrapper">
+            <img class="team-member-image" src="https://drive.google.com/thumbnail?id=1lU27taIc88mhTbEZUDsp0giVpv8Q9D8A&sz=w1000.jpg">
+          </div>
+          <p class="text-blk name">
+            Satyam Jha
+          </p>
+          <p class="text-blk position">
+            B23CS1066
+          </p>
+
+          <div class="social-icons">
+            <a href="https://github.com/Satyam1717" target="_blank">
+              <img class="github-icon" src="https://img.icons8.com/?size=30&amp;id=62856&amp;format=png">
+            </a>
+            <a href="https://www.linkedin.com/in/satyam-jha-4a2046315/" target="_blank">
+              <img class="linkedin-icon" src="https://img.icons8.com/?size=30&amp;id=98960&amp;format=png">
+
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+        <div class="card">
+          <div class="team-image-wrapper">
+            <img class="team-member-image" src="images/myphoto.jpg">
+          </div>
+          <p class="text-blk name">
+            Shivam
+          </p>
+          <p class="text-blk position">
+            B23EE1068
+          </p>
+
+          <div class="social-icons">
+            <a href="https://github.com/Shivam-252005" target="_blank">
+              <img class="github-icon" src="https://img.icons8.com/?size=30&amp;id=62856&amp;format=png">
+            </a>
+            <a href="https://www.linkedin.com/in/shivam-yadav-0a64ab28a/" target="_blank">
+              <img class="linkedin-icon" src="https://img.icons8.com/?size=30&amp;id=98960&amp;format=png">
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <p class="section"></p>
+  <p class="section"></p>
+
+  <div class="ack">
+    <p class="section" id="ack"><b>Acknowledgment</b></p>
+    We would like to express our heartfelt appreciation to Dr. Anand Mishra for granting us the privilege to contribute to this project.
+  </div>
+
+  <div class="contact">
+    <p class="section" id="related-paper"><b>Contact</b></p>
+    For any queries, please contact <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSHxjhdJxKwhNHqbPtlRXdKtfrKmRHbMptvBFwjbHchPgPMLrnXXCgrhhmvxFTxcMdqSJZdC" target="_blank">Satyam Jha</a> or raise
+    an issue on <a class="publink" href="https://github.com/Satyam1717/PRML-Project-Market-Sentiment-Analysis-/tree/master" target="_blank" style="text-decoration: none">GitHub</a>.
+  </div>
+  <p class="section"></p>
+
+  <script>
+    function prompt_on(prompt_element) {
+      prompt_element.classList.add("caption-active");
+    }
+
+    function prompt_off(prompt_element) {
+      prompt_element.classList.remove("caption-active");
+    }
+
+    function toggle_prompt(active_prompt_id, inactive_prompt_ids, result_id) {
+      let active_prompt = document.getElementById(active_prompt_id);
+      prompt_on(active_prompt);
+      for (let i = 0; inactive_prompt_ids.length; i++) {
+        let inactive_prompt = document.getElementById(inactive_prompt_ids[i]);
+        prompt_off(inactive_prompt);
+      }
+
+      let result = document.getElementById(result_id);
+      result.src = file_paths[active_prompt_id];
+    }
+  </script>
+
+  <script src="js/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="js/popper.min.js" crossorigin="anonymous"></script>
+
+  
 </body>
 </html>
