@@ -29,6 +29,7 @@ st.markdown("""
         font-size: 1.5rem;
         color: #424242;
         margin-bottom: 1rem;
+        text-align: center;
     }
     .prediction-box {
         background-color: #f0f2f6;
@@ -252,9 +253,10 @@ def main():
         # Add information about the model
         st.subheader("About the Model")
         st.write("""
-        This application uses a SARIMAX model to predict stock prices based on:
+        This application uses a SARIMAX model to predict stock prices of reliance industries based on:
         - Historical price data
         - EWMA (Exponentially Weighted Moving Average) sentiment analysis
+        - Sentiment analysis
         
         The model provides predictions with 95% confidence intervals.
         """)
@@ -271,14 +273,12 @@ def main():
             col1, col2 = st.columns(2)
             
             with col1:
-                st.markdown("<div class='prediction-box'>", unsafe_allow_html=True)
-                st.markdown("### Predicted Stock Price")
+                st.markdown("### Predicted Reliance Industries Stock Price")
                 st.markdown(f"<div class='prediction-value'>₹{target_prediction['Predicted_Close']:.2f}</div>", unsafe_allow_html=True)
                 st.markdown(f"95% Confidence Interval: ₹{target_prediction['Lower_CI']:.2f} - ₹{target_prediction['Upper_CI']:.2f}")
                 st.markdown("</div>", unsafe_allow_html=True)
             
             with col2:
-                st.markdown("<div class='prediction-box'>", unsafe_allow_html=True)
                 st.markdown("### Predicted EWMA Sentiment")
                 
                 sentiment_value = target_prediction['Predicted_EWMA']
