@@ -61,8 +61,8 @@ st.markdown("<p class='sub-header'>Forecast future stock prices based on histori
 @st.cache_resource
 def load_models():
     # File paths for saved models
-    stock_model_path = 'stock_model.pkl'
-    ewma_model_path = 'ewma_model.pkl'
+    stock_model_path = 'trained_models/stock_model.pkl'
+    ewma_model_path = 'trained_models/ewma_model.pkl'
     
     # Check if models exist
     if os.path.exists(stock_model_path) and os.path.exists(ewma_model_path):
@@ -105,33 +105,40 @@ def predict_stock_price(target_date, full_model_fit, ewma_model_fit, merged_data
     future_dates = pd.date_range(start=last_date + pd.Timedelta(days=1),
                               end=target_date, freq='D')
     
-    # Predict future EWMA values using the EWMA model
-    ewma_forecast = ewma_model_fit.get_forecast(steps=len(future_dates))
-    predicted_ewma = ewma_forecast.predicted_mean
-    
-    # Reindex predicted_ewma to match future_dates
-    predicted_ewma.index = future_dates
-    
-    # Create DataFrame for future EWMA values
-    future_ewma = pd.DataFrame({'ewma_3': predicted_ewma}, index=future_dates)
-    
-    # Generate stock price predictions using the predicted EWMA values
-    future_predictions = full_model_fit.get_forecast(steps=len(future_dates), exog=future_ewma)
-    forecast_mean = future_predictions.predicted_mean
-    forecast_ci = future_predictions.conf_int(alpha=0.05)
-    
-    forecast_mean.index = future_dates
-    forecast_ci.index = future_dates
-    
-    # Create a DataFrame with predictions
-    forecast_df = pd.DataFrame({
-        'Predicted_Close': forecast_mean,
-        'Predicted_EWMA': predicted_ewma,
-        'Lower_CI': forecast_ci['lower Close'],
-        'Upper_CI': forecast_ci['upper Close']
-    }, index=future_dates)
-    
-    return forecast_df
+    try:
+        # Step 1: Get EWMA forecast
+        ewma_forecast = ewma_model_fit.get_forecast(steps=len(future_dates))
+        
+        # Extract predicted values and ignore index
+        ewma_values = ewma_forecast.predicted_mean.values
+        
+        # Create DataFrame for future EWMA values with our custom date index
+        future_ewma = pd.DataFrame({'ewma_3': ewma_values}, index=future_dates)
+        
+        # Step 2: Get stock price forecast using the future EWMA values
+        future_predictions = full_model_fit.get_forecast(steps=len(future_dates), exog=future_ewma)
+        
+        # Extract predicted means and confidence intervals, ignoring the original index
+        forecast_values = future_predictions.predicted_mean.values
+        forecast_ci = future_predictions.conf_int(alpha=0.05)
+        lower_ci = forecast_ci['lower Close'].values
+        upper_ci = forecast_ci['upper Close'].values
+        
+        # Create a DataFrame with predictions and our custom date index
+        forecast_df = pd.DataFrame({
+            'Predicted_Close': forecast_values,
+            'Predicted_EWMA': ewma_values,
+            'Lower_CI': lower_ci,
+            'Upper_CI': upper_ci
+        }, index=future_dates)
+        
+        return forecast_df
+        
+    except Exception as e:
+        st.error(f"Error in prediction: {str(e)}")
+        import traceback
+        st.error(traceback.format_exc())
+        return None
 
 # Function to visualize predictions
 def visualize_predictions(historical_data, forecast_df):
@@ -153,7 +160,7 @@ def visualize_predictions(historical_data, forecast_df):
         y=forecast_df['Predicted_Close'],
         mode='lines',
         name='Predicted Stock Price',
-        line=dict(color='red', dash='dash')
+        line=dict(color='red')
     ))
     
     # Add confidence interval
@@ -198,7 +205,7 @@ def visualize_sentiment(historical_data, forecast_df):
         y=forecast_df['Predicted_EWMA'],
         mode='lines',
         name='Predicted EWMA Sentiment',
-        line=dict(color='orange', dash='dash')
+        line=dict(color='orange')
     ))
     
     # Update layout
