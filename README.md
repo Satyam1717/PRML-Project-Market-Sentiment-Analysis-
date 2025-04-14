@@ -72,7 +72,7 @@ Our approach integrates natural language processing with time series forecasting
 
 - **Word Embeddings**:
   - Built custom Word2Vec models trained on financial news corpus
-  - Used 300-dimensional vectors to capture semantic relationships between financial terms
+  - Used 500-dimensional vectors to capture semantic relationships between financial terms
 - **TF-IDF Weighting**:
   - Calculated Term Frequency-Inverse Document Frequency to weigh the importance of words
   - Generated TF-IDF weighted document vectors by combining Word2Vec embeddings with TF-IDF scores
@@ -91,12 +91,9 @@ Our approach integrates natural language processing with time series forecasting
 - **SARIMAX Model Development**:
   - Incorporated exogenous sentiment variables (EWMA scores) into the SARIMAX framework
   - Applied grid search to optimize SARIMA parameters (p,d,q) × (P,D,Q)s for seasonal components
-  - Used AIC (Akaike Information Criterion) for model selection
-  - Conducted stationarity tests (Augmented Dickey-Fuller) to ensure proper time series properties
+  - Conducted stationarity tests to ensure proper time series properties
 - **Alternative ML Approach**:
   - Implemented XGBoost regression with Word2Vec embeddings as an alternative prediction technique
-  - Used hyperparameter tuning to optimize XGBoost parameters (learning rate, max depth, etc.)
-  - Applied k-fold cross-validation to prevent overfitting
 
 ### 6. Model Evaluation and Validation
 
@@ -126,8 +123,8 @@ Our approach integrates natural language processing with time series forecasting
 
 Our model showed meaningful correlation between sentiment and stock movement. The forecasts closely matched real data during evaluation, with the following metrics:
 
-- Mean Absolute Percentage Error (MAPE): ~4.45%
-- Root Mean Squared Error (RMSE): ~64.46
+- Mean Absolute Percentage Error (MAPE): ~2.9738%
+- Root Mean Squared Error (RMSE): ~43.9098
 
 ## Project Workflow
 
