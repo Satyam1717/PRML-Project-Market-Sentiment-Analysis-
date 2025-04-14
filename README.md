@@ -14,7 +14,6 @@ Check out our live Streamlit app: [Market Sentiment Analysis App](https://stream
 ## 🛠 Tech Stack
 
 - **Python Libraries**: NumPy, Pandas, Scikit-learn, NLTK
-- **Sentiment Analysis**: VADER (Valence Aware Dictionary and sEntiment Reasoner)
 - **Time Series Forecasting**: SARIMAX from statsmodels
 - **Word Embeddings**: Word2Vec
 - **Machine Learning**: XGBoost
